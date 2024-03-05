@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 
@@ -36,11 +37,19 @@ public class HomeController {
 //        return "result.jsp";
 //    }
 
-     @RequestMapping("add")
-    public String add(int num1, int num2, Model model){
+//     @RequestMapping("add")
+//    public String add(int num1, int num2, Model model){
+//
+//        int result = num1 + num2;
+//        model.addAttribute("r1",result);
+//        return "result";
+//    }
 
+     @RequestMapping("add")
+    public ModelAndView add(int num1, int num2, ModelAndView modelAndView){
         int result = num1 + num2;
-        model.addAttribute("r1",result);
-        return "result";
+        modelAndView.addObject("r1",result);
+        modelAndView.setViewName("result");
+        return modelAndView;
     }
 }
