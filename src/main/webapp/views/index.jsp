@@ -5,8 +5,9 @@
         <link rel= "stylesheet" type="text/css" href="style.css">
         </head>
 <body>
-<h2>My Calculator!!</h2>
-        <form  action = "add" id="number-form">
+
+<%--
+<form  action = "add" >
                 <label for="num1">Number 1:</label>
                 <input type="number" id="num1" name="num1" required>
                 <br>
@@ -15,6 +16,21 @@
                 <br>
                 <button type="submit">Add</button>
          </form>
+
+--%>
+
+
+<h2>Adding alien</h2>
+        <form  action = "addAlien" id="number-form">
+                <label for="alienId">Alien Id</label>
+                <input type="text" id="alienId" name="alienId" required>
+                <br>
+                 <label for="alienName">Alien Name:</label>
+                <input type="text" id="alienName" name="alienName" required>
+                <br>
+                <button type="submit">Add</button>
+         </form>
+
 
 </body>
 </html>
