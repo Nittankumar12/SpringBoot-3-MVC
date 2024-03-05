@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,11 +46,37 @@ public class HomeController {
 //        return "result";
 //    }
 
-     @RequestMapping("add")
-    public ModelAndView add(int num1, int num2, ModelAndView modelAndView){
-        int result = num1 + num2;
-        modelAndView.addObject("r1",result);
-        modelAndView.setViewName("result");
-        return modelAndView;
+//     @RequestMapping("add")
+//    public ModelAndView add(int num1, int num2, ModelAndView modelAndView){
+//        int result = num1 + num2;
+//        modelAndView.addObject("r1",result);
+//        modelAndView.setViewName("result");
+//        return modelAndView;
+//    }
+
+    // Model Attribute
+//    @RequestMapping("addAlien")
+//    public ModelAndView add(int alienId, String alienName, ModelAndView modelAndView){
+//        Alien alien = new Alien();
+//        alien.setAlienName(alienName);
+//        alien.setAlienId(alienId);
+//        modelAndView.addObject("alien",alien);
+//        modelAndView.setViewName("result");
+//        return modelAndView;
+//    }
+
+    // but if we dont want to write much, by using model attribute spring automatically do this for you
+
+    // MODELATTRIBUTE
+    @RequestMapping("addAlien")
+    public String add(Alien alien){
+//public String addAlien(@ModelAttribute("alien1") Alien alien) {
+        return "result";
     }
+
+    @ModelAttribute("course")
+    public String courese(){
+        return "Java";
+    }
+
 }
